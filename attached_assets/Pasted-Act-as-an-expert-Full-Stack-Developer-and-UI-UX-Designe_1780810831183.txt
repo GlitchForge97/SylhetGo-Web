@@ -1,0 +1,33 @@
+Act as an expert Full-Stack Developer and UI/UX Designer. I want you to build the frontend prototype for a comprehensive tourism platform called "SylhetGo" (Tagline: "One Platform. All of Sylhet."). 
+
+Originally conceptualized as an app, this platform needs to be a fully responsive, mobile-first web application (Progressive Web App) that helps tourists visiting Sylhet, Bangladesh. 
+
+Please generate a functional, interactive React (with Tailwind CSS) prototype in a single file/Artifact that includes a polished Main Dashboard and a Sidebar/Navigation menu to switch between different views. 
+
+### 1. Core Features to Include in the UI:
+- **Transport Hub:** Zone-based CNG fares, bus schedules & fares, and train timetables.
+- **Accommodation & Dining:** Listings for hotels, resorts, homestays, and local restaurants with budget filters and "Verified" badges.
+- **Local Guides & Attractions:** Verified guide profiles, attraction routes (Ratargul, Jaflong, etc.), and a "Hidden Gems" section.
+- **Haor Season Tracker:** A visual month-by-month tracker showing water levels and accessibility for haor areas.
+- **Trip Planner:** An input area for travel dates and budget to generate a custom itinerary.
+- **Community & Emergency:** Tourist reviews, real-time updates (road closures), tourist police/hospital numbers, and a Sylheti phrase guide.
+- **Language Toggle:** UI element to switch between Bengali, English, and Arabic.
+
+### 2. User Roles & Dashboards (Crucial):
+The platform must support three distinct views. Please create a toggle or navigation system in the prototype to switch between these roles:
+1. **Tourist View (Public/User):** The main interface exploring the features mentioned above, managing their premium day-passes, and viewing offline-saved data.
+2. **Business/Vendor Dashboard:** A portal for local guides, CNG drivers, and hotel owners to manage their listings, pay for verification, and view booking requests.
+3. **Super Admin Panel (New):** A master control dashboard for the SylhetGo team to:
+   - Approve or reject "Verified Badge" requests from vendors.
+   - Monitor total active users, revenue (premium passes & commissions), and platform analytics.
+   - Moderate community forum posts and real-time alerts.
+   - Manage advertisements and data insights.
+
+### 3. Technical & Design Requirements for Claude:
+- Use **React** and **Tailwind CSS** (Lucide React for icons).
+- Make the design **mobile-first**, modern, clean, and highly intuitive. 
+- Emphasize the **PWA nature** of the site (e.g., show an "Offline Mode Ready" indicator).
+- Use placeholder data to make the UI look alive and functional (e.g., dummy stats in the admin panel, sample hotels, dummy haor water levels).
+
+### Task:
+Generate the React code for this application. Start by showing the **Super Admin Panel** as the default view so I can see the management side, but include a clear navigation bar/sidebar that allows switching to the **Tourist View** and **Vendor Dashboard**. Ensure the code is complete, error-free, and renders beautifully.
