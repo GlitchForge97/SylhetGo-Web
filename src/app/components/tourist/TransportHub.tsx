@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Bus, Train, Fuel, MapPin, Clock, DollarSign, Search, RefreshCw } from "lucide-react";
 import { useLang } from "../../context/LanguageContext";
+import { API_ENDPOINTS } from "@/config";
 
 type Route = {
   id: number;
@@ -26,10 +27,8 @@ export function TransportHub() {
 
   useEffect(() => {
     setLoading(true);
-import { API_ENDPOINTS } from "@/config";
-
-// Then:
-fetch(`${API_ENDPOINTS.transport}?type=${tab}`)      .then(r => r.json())
+    fetch(`${API_ENDPOINTS.transport}?type=${tab}`)
+      .then(r => r.json())
       .then(data => { setRoutes(data); setLoading(false); })
       .catch(() => setLoading(false));
   }, [tab]);

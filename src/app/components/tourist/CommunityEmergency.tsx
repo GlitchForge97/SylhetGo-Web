@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Phone, AlertTriangle, MessageSquare, Globe, Heart, Shield, Send, ThumbsUp, RefreshCw, ChevronDown } from "lucide-react";
 import { useLang } from "../../context/LanguageContext";
+import { API_ENDPOINTS } from "@/config";
 
 type Post = {
   id: number;
@@ -53,12 +54,8 @@ export function CommunityEmergency() {
   const [showAll, setShowAll] = useState(false);
 
   useEffect(() => {
-    import { API_ENDPOINTS } from "@/config";
-
-// Then:
-fetch(API_ENDPOINTS.community)
-// and
-fetch(API_ENDPOINTS.community, {
+    fetch(API_ENDPOINTS.community)
+      .then(r => r.json())
       .then(data => { setPosts(data); setLoading(false); })
       .catch(() => setLoading(false));
   }, []);

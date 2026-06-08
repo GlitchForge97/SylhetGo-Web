@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Hotel, Utensils, Star, CheckCircle, Phone, MapPin, Filter, RefreshCw } from "lucide-react";
 import { useLang } from "../../context/LanguageContext";
+import { API_ENDPOINTS } from "@/config";
 
 type Accommodation = {
   id: number;
@@ -43,11 +44,8 @@ export function AccommodationDining() {
 
   useEffect(() => {
     Promise.all([
-      import { API_ENDPOINTS } from "@/config";
-
-// In useEffect:
-fetch(API_ENDPOINTS.accommodations).then(r => r.json()),
-fetch(API_ENDPOINTS.restaurants).then(r => r.json()),
+      fetch(API_ENDPOINTS.accommodations).then(r => r.json()),
+      fetch(API_ENDPOINTS.restaurants).then(r => r.json()),
     ]).then(([accom, resto]) => {
       setAccommodations(accom);
       setRestaurants(resto);

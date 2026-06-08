@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { MapPin, Star, CheckCircle, Gem, Clock, DollarSign, Users, RefreshCw, ChevronRight } from "lucide-react";
 import { Link } from "react-router";
 import { useLang } from "../../context/LanguageContext";
+import { API_ENDPOINTS } from "@/config";
 
 type Attraction = {
   id: number;
@@ -33,10 +34,7 @@ export function GuidesAttractions() {
   const [typeFilter, setTypeFilter] = useState("all");
 
   useEffect(() => {
-    import { API_ENDPOINTS } from "@/config";
-
-// Then inside useEffect:
-fetch(API_ENDPOINTS.attractions)
+    fetch(API_ENDPOINTS.attractions)
       .then(r => r.json())
       .then(data => { setAttractions(data); setLoading(false); })
       .catch(() => setLoading(false));

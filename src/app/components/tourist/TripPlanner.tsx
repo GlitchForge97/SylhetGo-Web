@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Calendar, DollarSign, MapPin, Users, Loader, CheckCircle, Clock, Star } from "lucide-react";
 import { useLang } from "../../context/LanguageContext";
+import { API_ENDPOINTS } from "@/config";
 
 const DESTINATIONS = [
   "Full Sylhet Circuit",
@@ -88,10 +89,8 @@ export function TripPlanner() {
 
     // Save to DB
     try {
-import { API_ENDPOINTS } from "@/config";
-
-// Then:
-await fetch(API_ENDPOINTS.tripPlan, {        method: "POST",
+      await fetch(API_ENDPOINTS.tripPlan, {
+        method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           destination: form.destination,
