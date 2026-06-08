@@ -43,8 +43,11 @@ export function AccommodationDining() {
 
   useEffect(() => {
     Promise.all([
-      fetch("/api/accommodations").then(r => r.json()),
-      fetch("/api/restaurants").then(r => r.json()),
+      import { API_ENDPOINTS } from "@/config";
+
+// In useEffect:
+fetch(API_ENDPOINTS.accommodations).then(r => r.json()),
+fetch(API_ENDPOINTS.restaurants).then(r => r.json()),
     ]).then(([accom, resto]) => {
       setAccommodations(accom);
       setRestaurants(resto);

@@ -53,8 +53,12 @@ export function CommunityEmergency() {
   const [showAll, setShowAll] = useState(false);
 
   useEffect(() => {
-    fetch("/api/community")
-      .then(r => r.json())
+    import { API_ENDPOINTS } from "@/config";
+
+// Then:
+fetch(API_ENDPOINTS.community)
+// and
+fetch(API_ENDPOINTS.community, {
       .then(data => { setPosts(data); setLoading(false); })
       .catch(() => setLoading(false));
   }, []);

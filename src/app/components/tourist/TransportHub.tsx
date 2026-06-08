@@ -26,8 +26,10 @@ export function TransportHub() {
 
   useEffect(() => {
     setLoading(true);
-    fetch(`/api/transport?type=${tab}`)
-      .then(r => r.json())
+import { API_ENDPOINTS } from "@/config";
+
+// Then:
+fetch(`${API_ENDPOINTS.transport}?type=${tab}`)      .then(r => r.json())
       .then(data => { setRoutes(data); setLoading(false); })
       .catch(() => setLoading(false));
   }, [tab]);

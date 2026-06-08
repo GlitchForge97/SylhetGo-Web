@@ -88,8 +88,10 @@ export function TripPlanner() {
 
     // Save to DB
     try {
-      await fetch("/api/trip-plan", {
-        method: "POST",
+import { API_ENDPOINTS } from "@/config";
+
+// Then:
+await fetch(API_ENDPOINTS.tripPlan, {        method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           destination: form.destination,

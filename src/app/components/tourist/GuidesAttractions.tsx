@@ -33,7 +33,10 @@ export function GuidesAttractions() {
   const [typeFilter, setTypeFilter] = useState("all");
 
   useEffect(() => {
-    fetch("/api/attractions")
+    import { API_ENDPOINTS } from "@/config";
+
+// Then inside useEffect:
+fetch(API_ENDPOINTS.attractions)
       .then(r => r.json())
       .then(data => { setAttractions(data); setLoading(false); })
       .catch(() => setLoading(false));
